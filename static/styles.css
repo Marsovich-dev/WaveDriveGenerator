@@ -1,0 +1,247 @@
+
+*{
+font-family: Verdana;
+}
+
+body {
+  background-color: black;
+  text-align: center;
+  color: #ffff00;
+}
+
+.multiline {
+    margin: 0 auto;
+    width: 1170px;
+    white-space: pre-wrap;
+    word-wrap: normal;
+    text-align: left;
+}
+
+.heading {
+    border-bottom: 4px solid red;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.wrapper {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+
+form {
+    width: 700px;
+    text-align: left;
+
+}
+
+
+.input_list input[type="text"] {
+    margin-top: 20px;
+    background-color: #f3f3f3;
+	border: 1px solid #e7e7e7;
+	width: 60px;
+	height: 40px;
+	color: black;
+	padding: 0 10px;
+	font-size: 20px;
+	float: right;
+}
+
+.input_list label{
+    clear: both;
+    float: left;
+    margin-top: 25px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+form h3 {
+    padding-top: 20px;
+    margin-bottom: 0px;
+    clear: both;
+    color: red;
+    text-align: center;
+}
+
+form input[type=submit]{
+    position: absolute;
+    right: 50px;
+    width: 350px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: black;
+    background-color: #ffff00;
+}
+
+#sidebar {
+    position: absolute;
+    right: 50px;
+    margin-top: 50px;
+}
+
+#sidebar button {
+    float: right;
+    clear: both;
+    width: 350px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: black;
+    background-color: #ffff00;
+}
+
+
+#sidebar h3{
+    width: 350px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+    padding-top: 20px;
+    color: #ffff00;
+    font-size: 20px;
+    text-align: center;
+}
+
+.flash {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid white;
+    white-space: pre-wrap;
+}
+
+.flash.success {
+    color: green;
+}
+
+.flash.error {
+    color: red;
+}
+
+.input_list_mini input[type="text"] {
+    margin-top: 15px;
+    background-color: #f3f3f3;
+	border: 1px solid #e7e7e7;
+	width: 30px;
+	height: 28px;
+	color: black;
+	padding: 0 10px;
+	font-size: 16px;
+	float: right;
+}
+
+.input_list_mini button {
+    float: right;
+    width: 50px;
+	height: 35px;
+    margin: 0px;
+    border: 1px solid #000;
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 16px;
+    color: black;
+    background-color: #fff;
+}
+
+.input_list_mini button[check="True"] {
+    color: black;
+    background-color: #ffff00;
+}
+
+#OUT_FILE {
+    width: 87px;
+    font-weight: bold;
+}
+
+.input_list_mini input[type="checkbox"] {
+    margin-top: 20px;
+    width: 20px;
+    height: 20px;
+    float: right;
+}
+
+.input_list_mini label{
+    margin-top: 20px;
+    clear: both;
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+.input_list_mini #lang{
+    margin-top: 20px;
+    float: left;
+
+}
+
+.input_list_mini select {
+    margin-top: 20px;
+    background-color: #f3f3f3;
+    height: 28px;
+    float: right;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+
+[data-tip] {
+  position:relative;
+}
+
+[data-tip]:after {
+    display: none;
+    content: attr(data-tip);
+    position: absolute;
+    margin-top: 5px;
+    right: 10px;
+    padding: 5px 8px;
+    background: #1a1a1a;
+    color: #fff;
+    z-index: 9;
+    font-size: 13px;
+    text-align: left;
+    width: 300px;
+    line-height: 18px;
+    border-radius: 3px;
+    white-space: pre-wrap;
+    word-wrap: normal;
+    font-weight: normal;
+}
+
+#message[data-tip]:after {
+    left: 0px;
+    margin-top: 20px;
+    width: 450px;
+}
+
+[data-tip]:hover:before,
+[data-tip]:hover:after,
+#message[data-tip]:hover:before,
+#message[data-tip]:hover:after {
+    display:block;
+}
+
+
+footer {
+    margin-top: 400px;
+}
+
+
+#page_about a {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffff00;
+}
+
+#page_about .multiline {
+    text-align: center;
+    line-height: 200%;
+}

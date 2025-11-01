@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{texts["about_title"]}}</title>
+    <link type="text/css" href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+	<link rel="icon" href="static/images/favicon.png" type="image/x-icon" />
+</head>
+<body>
+    <div class="wrapper">
+        <h1>{{texts["about_title"]}}</h1>
+
+        <div id="page_about">
+            <div class="multiline">{{texts["about"]}}</div>
+
+            <a href="https://youtube.com/@marsovich?si=0O4XG8ei3iZifYih" target="_blank">{{texts["marsovich_link"]}}</a>
+
+            <a href="https://youtube.com/@trashrobotics?si=NJbpGQwVrms0EFn7" target="_blank">{{texts["trashrobotics_link"]}}</a>
+
+            <a href="https://codeberg.org/TrashRobotics/BallsWaveGearingGenerator" target="_blank">{{texts["original_link"]}}</a>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <a href="/license" target="_blank"><h5>{{texts["license_link"]}}</h5></a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{texts["title"]}}</title>
+    <link type="text/css" href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+	<link rel="icon" href="static/images/favicon.png" type="image/x-icon" />
+
+</head>
+<body>
+
+<div class="wrapper">
+	<header class="heading">
+		<h1>{{texts["title"]}}</h1>
+	</header>
+
+	{% for category, msg in get_flashed_messages(True) %}
+	<div class="flash {{category}}" id="message" data-tip="{{parameters_string}}">{{msg}}</div>
+	{% endfor %}
+
+	<form action="/" method="post" autocomplete="off">
+
+		<input type="submit" value="{{texts['calculate_btn']}}">
+
+		<div id="sidebar">
+			<a href="/download_dxf"> <button type="button">{{texts["download_dxf"]}}</button> </a>
+
+			<a href="/download_txt"> <button type="button">{{texts["download_txt"]}}</button> </a>
+
+			<a href="https://youtu.be/c73QGWpfhQw?si=LbHr6pLQOvKK6DZb" target="_blank"><h3> {{texts["video_link"]}} </h3></a>
+
+			<a href="/about" target="_blank"><h3> {{texts["about_link"]}} </h3></a>
+
+		</div>
+
+
+		<div class="input_list">
+			<label data-tip="{{texts['data-tip_i']}}">{{texts["label_i"]}}</label>
+			<input type="text" name="i"  value="{{i}}" pattern="\d+" required>
+
+			<label>{{texts["label_dsh"]}}</label>
+			<input type="text" name="dsh" value="{{dsh}}" pattern="\d+([.,]\d+)?" required>
+
+			<label data-tip="{{texts['data-tip_Rout']}}">{{texts["label_Rout"]}}</label>
+			<input type="text" name="Rout" value="{{Rout}}"  pattern="\d+([.,]\d+)?">
+
+			<label data-tip="{{texts['data-tip_D']}}">{{texts["label_D"]}}</label>
+			<input type="text" name="D" value="{{D}}" pattern="\d+([.,]\d+)?">
+		</div>
+
+		<h3> {{texts["settings_heading"]}} </h3>
+
+		<div class="input_list_mini">
+			<label data-tip="{{texts['data-tip_RESOLUTION']}}">{{texts["label_RESOLUTION"]}}</label>
+			<input type="text" name="RESOLUTION" value="{{RESOLUTION}}" pattern="\d+" required>
+
+			<label>{{texts["label_BASE_WHEEL_SHAPE"]}}</label>
+			{% if BASE_WHEEL_SHAPE %}
+			<input type="checkbox" name="BASE_WHEEL_SHAPE" checked>
+			{% else %}
+			<input type="checkbox" name="BASE_WHEEL_SHAPE">
+			{% endif %}
+
+			<label>{{texts["label_SEPARATOR"]}}</label>
+			{% if SEPARATOR %}
+			<input type="checkbox" name="SEPARATOR" checked>
+			{% else %}
+			<input type="checkbox" name="SEPARATOR">
+			{% endif %}
+
+			<label>{{texts["label_ECCENTRIC"]}}</label>
+			{% if ECCENTRIC %}
+			<input type="checkbox" name="ECCENTRIC" checked>
+			{% else %}
+			<input type="checkbox" name="ECCENTRIC">
+			{% endif %}
+
+			<label>{{texts["label_BALLS"]}}</label>
+			{% if BALLS %}
+			<input type="checkbox" name="BALLS" checked>
+			{% else %}
+			<input type="checkbox" name="BALLS">
+			{% endif %}
+
+			<label>{{texts["label_OUT_DIAMETER"]}}</label>
+			{% if OUT_DIAMETER %}
+			<input type="checkbox" name="OUT_DIAMETER" checked>
+			{% else %}
+			<input type="checkbox" name="OUT_DIAMETER">
+			{% endif %}
+
+			<label>{{texts["label_OUT_FILE"]}}</label>
+			<input type="text" name="OUT_FILE" value="{{OUT_FILE}}" id="OUT_FILE" required>
+
+		</div>
+
+	</form>
+
+	<form action="/" class="input_list_mini" method="get">
+		<label>{{texts["label_language"]}}</label>
+		{% if language == "ru" %}
+		<a href="/ru_btn"> <button type="button" check="True">RU</button> </a>
+		<a href="/en_btn"> <button type="button">EN</button> </a>
+		{% elif language == "en" %}
+		<a href="/ru_btn"> <button type="button">RU</button> </a>
+		<a href="/en_btn"> <button type="button" check="True">EN</button> </a>
+		{% endif %}
+	</form>
+
+</div>
+
+<footer>
+	<a href="/license" target="_blank"><h5>{{texts["license_link"]}}</h5></a>
+</footer>
+
+</body>
+
+</html>
